@@ -1,0 +1,84 @@
+:root {
+    --primary-color: #282c34;
+    --secondary-color: #dfdfdf;
+    --tertiary-color: #e9f600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.inputArea {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    .textFieldAutoComplete {
+        background-color: var(--secondary-color);
+    }
+    .autocompleteInput {
+        width: 80%;
+        label {
+            border: 1px solid red;
+            display: none;
+            opacity: 0;
+        }
+        input {
+            color: var(--primary-color);
+            // Change the color of focus
+        }
+    }
+}
+
+.inputArea > * {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+
+.autocompleteInput {
+    width: 300px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .suggestions {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .suggestion {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .addButton {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .addButton:hover {
+    background-color: #0056b3;
+  }
+  
