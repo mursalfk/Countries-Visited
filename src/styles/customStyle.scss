@@ -122,6 +122,7 @@ body {
 .map-page {
     display: flex;
     height: 100%;
+    flex: auto;
 }
 
 .sidebar {
@@ -131,7 +132,8 @@ body {
 }
 
 .map-container {
-    width: 75%;
+    width: 100%;
+    text-align: center;
 }
 
 .countryListUL {
