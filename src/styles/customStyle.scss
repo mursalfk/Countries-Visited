@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #282c34;
-    --secondary-color: #dfdfdf;
+    --primary-color: #dfdfdf;
+    --secondary-color: #282c34;
     --tertiary-color: #e9f600;
 }
 
@@ -16,6 +16,12 @@ body {
     color: var(--secondary-color);
 }
 
+.mainApp {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
 .inputArea {
     display: flex;
     align-items: center;
@@ -24,24 +30,15 @@ body {
     .textFieldAutoComplete {
         background-color: var(--secondary-color);
     }
-    .autocompleteInput {
-        width: 80%;
-        label {
-            border: 1px solid red;
-            display: none;
-            opacity: 0;
-        }
-        input {
-            color: var(--primary-color);
-            // Change the color of focus
-        }
-    }
 }
 
 .inputArea > * {
     margin-right: 10px; /* Adjust as needed */
 }
 
+.autocomplete {
+    position: relative; /* Make autocomplete container position relative */
+}
 
 .autocompleteInput {
     width: 300px;
@@ -49,26 +46,31 @@ body {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .suggestions {
+}
+
+.suggestions {
     position: absolute;
-    top: 40px;
+    top: calc(100% + 8px); /* Position relative to the input box */
     left: 0;
-    width: 300px;
+    width: 100%; /* Take full width of parent */
     background-color: #fff;
     border: 1px solid #ccc;
     border-top: none;
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .suggestion {
+}
+
+.suggestion {
     padding: 8px;
     cursor: pointer;
-  }
-  
-  .addButton {
+}
+
+.disabled {
+    cursor: not-allowed;
+    color: #ccc;
+}
+
+.addButton {
     margin-left: 10px;
     padding: 8px 16px;
     background-color: #007bff;
@@ -76,9 +78,133 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .addButton:hover {
+}
+
+.addButton:hover {
     background-color: #0056b3;
-  }
-  
+}
+
+// Navbar.scss
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    margin-bottom: 1rem; /* Add some bottom margin */
+}
+
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+}
+
+.navbar-item {
+    margin-bottom: 0.5rem; /* Add some bottom margin */
+    cursor: pointer;
+}
+
+.navbar-item:last-child {
+    margin-bottom: 0; /* Remove bottom margin for the last item */
+}
+
+.navbar-item:hover {
+    text-decoration: underline;
+}
+
+/* customStyle.css */
+.map-page {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.map-container {
+    width: 75%;
+}
+
+.countryListUL {
+    list-style-type: none;
+    padding: 0;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    li{
+        margin: 2px 0px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        // border-top: 1px solid #ccc;
+        border-bottom: 1px solid var(--primary-color);
+        align-items: center;
+        .countryNameSidebar{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+.removeButton {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.removeButton:hover {
+    background-color: #c82333;
+}
+
+// For Mobile
+@media (max-width: 768px) {
+    .mainApp {
+        flex-direction: column; /* Stack components vertically on small screens */
+    }
+
+    .sidebar {
+        width: 100%; /* Take full width on small screens */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .map-container {
+        width: 100%; /* Take full width on small screens */
+    }
+
+    .navbar {
+        flex-direction: row; /* Display navbar items horizontally */
+        align-items: center; /* Center items vertically */
+        padding: 0.5rem; /* Reduce padding */
+    }
+
+    .navbar-brand {
+        margin-bottom: 0.5rem; /* Reduce bottom margin */
+    }
+
+    .navbar-menu {
+        flex-direction: row; /* Display items horizontally */
+        margin-top: 0.5rem; /* Add some top margin */
+    }
+
+    .navbar-item {
+        margin-bottom: 0; /* Remove bottom margin */
+        margin-right: 0.5rem; /* Add some right margin */
+    }
+
+    .suggestions {
+        width: calc(100% - 16px); /* Adjust width */
+        left: 8px; /* Adjust left position */
+    }
+}
