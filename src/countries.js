@@ -181,7 +181,7 @@ const countries = [
     { "CountryName": "Qatar", "Code": "QA" },
     { "CountryName": "Réunion", "Code": "RE" },
     { "CountryName": "Romania", "Code": "RO" },
-    { "CountryName": "Russian Federation", "Code": "RU" },
+    { "CountryName": "Russia", "Code": "RU" },
     { "CountryName": "Rwanda", "Code": "RW" },
     { "CountryName": "Saint Barthélemy", "Code": "BL" },
     { "CountryName": "Saint Helena, Ascension and Tristan da Cunha", "Code": "SH" },
