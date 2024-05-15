@@ -2,7 +2,10 @@
 @import 'HomeStyle.scss';
 @import 'Footer.scss';
 @import 'Navbar.scss';
+@import 'NoUserNavbar.scss';
 @import 'Sidebar.scss';
+@import 'Login.scss';
+@import 'Register.scss';
 
 :root {
     --primary-color: #dfdfdf;
@@ -14,6 +17,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 body {
