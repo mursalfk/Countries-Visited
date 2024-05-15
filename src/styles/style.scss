@@ -1,0 +1,23 @@
+// import customStyles from './customStyles.scss';
+@import 'HomeStyle.scss';
+@import 'Footer.scss';
+@import 'Navbar.scss';
+@import 'Sidebar.scss';
+
+:root {
+    --primary-color: #dfdfdf;
+    --secondary-color: #282c34;
+    --tertiary-color: #e9f600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}

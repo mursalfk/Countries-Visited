@@ -1,0 +1,184 @@
+/* Main App Container */
+.homeApp {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: space-between;
+  /* Responsive Styles */
+}
+@media (max-width: 768px) {
+  .homeApp {
+    flex-direction: column;
+  }
+}
+
+/* Autocomplete Styles */
+.autocomplete {
+  position: relative;
+}
+.autocomplete .autocompleteInput {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.autocomplete .suggestions {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.autocomplete .suggestions .suggestion {
+  padding: 8px;
+  cursor: pointer;
+}
+.autocomplete .suggestions.disabled {
+  cursor: not-allowed;
+  color: #ccc;
+}
+.autocomplete .addButton {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.autocomplete .addButton:hover {
+  background-color: #0056b3;
+}
+
+/* Map Container Styles */
+.map-container {
+  width: 100%;
+  text-align: center;
+}
+
+/* Map Page Styles */
+.map-page {
+  display: flex;
+  height: 100%;
+  flex: auto;
+}
+
+/* footer.css */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  opacity: 0.8;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 15vw;
+}
+.navbar .navbar-brand {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.navbar .navbar-brand .navbar-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+  filter: invert(1);
+}
+.navbar .navbar-brand .navbar-brand-name {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.navbar .navbar-menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+.navbar .navbar-menu .navbar-item {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.navbar .navbar-menu .navbar-item:last-child {
+  margin-bottom: 0;
+}
+.navbar .navbar-menu .navbar-item:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 25%;
+  padding: 20px;
+  background-color: #f3f3f3;
+}
+.sidebar .countryListUL {
+  list-style-type: none;
+  padding: 0;
+  max-height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.sidebar .countryListUL li {
+  margin: 2px 0px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border-bottom: 1px solid var(--primary-color);
+  align-items: center;
+}
+.sidebar .countryListUL li .countryNameSidebar {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.sidebar .countryListUL li .removeButton {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sidebar .countryListUL li .removeButton:hover {
+  background-color: #c82333;
+}
+
+:root {
+  --primary-color: #dfdfdf;
+  --secondary-color: #282c34;
+  --tertiary-color: #e9f600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}/*# sourceMappingURL=style.css.map */

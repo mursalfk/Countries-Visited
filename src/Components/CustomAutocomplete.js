@@ -1,7 +1,7 @@
 // CustomAutocomplete.js
 import React, { useState, useEffect, useRef } from "react";
 import countries from "../countries";
-import "../styles/customStyle.css";
+import "../styles/style.css";
 
 export default function CustomAutocomplete({ onSelect }) {
   const [inputValue, setInputValue] = useState("");

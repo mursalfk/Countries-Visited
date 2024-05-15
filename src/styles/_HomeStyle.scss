@@ -1,0 +1,74 @@
+/* Main App Container */
+.homeApp {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    justify-content: space-between;
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+/* Autocomplete Styles */
+.autocomplete {
+    position: relative;
+
+    .autocompleteInput {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .suggestions {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        .suggestion {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+            color: #ccc;
+        }
+    }
+
+    .addButton {
+        margin-left: 10px;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+}
+
+/* Map Container Styles */
+.map-container {
+    width: 100%;
+    text-align: center;
+}
+
+/* Map Page Styles */
+.map-page {
+    display: flex;
+    height: 100%;
+    flex: auto;
+}
