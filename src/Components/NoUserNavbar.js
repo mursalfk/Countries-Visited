@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ImagesImported from "../Images/Images";
 import { Link, useLocation } from "react-router-dom";
 
-function NoUserNavbar() {
+function NoUserNavbar({
+    userLoggedIn
+}) {
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
 
@@ -35,7 +37,8 @@ function NoUserNavbar() {
                 <li className={`navbar-item ${location.pathname === "/register" ? "active" : ""}`}>
                     <Link to="/register">Register</Link>
                 </li>
-                <li className="navbar-item">Logout</li>
+                {userLoggedIn !== false && (<li className="navbar-item">Logout</li>)
+                }
             </ul>
         </nav>
     );

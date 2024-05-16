@@ -3,6 +3,7 @@ import React from "react";
 import ReactCountryFlag from "react-country-flag";
 
 function Sidebar({ selectedCountries, onRemoveCountry }) {
+    console.log(selectedCountries);
     return (
         <div className="">
             <h2>Visited Countries</h2>
