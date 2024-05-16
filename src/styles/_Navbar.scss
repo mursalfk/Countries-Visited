@@ -10,7 +10,7 @@
     // height: 100vh;
     // position: fixed;
 
-    .navbar-brand{
+    .navbar-brand {
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid var(--primary-color);
@@ -22,7 +22,7 @@
             margin-right: 1rem;
             filter: invert(1);
         }
-    
+
         .navbar-brand-name {
             font-size: 1rem;
             margin-bottom: 1rem;
@@ -33,7 +33,16 @@
         list-style-type: none;
         display: flex;
         flex-direction: column;
+        width: 100%;
 
+        .active {
+            background-color: var(--tertiary-color);
+            color: var(--secondary-color);
+            padding: 5px;
+            border-radius: 5px;
+            width: 100%;
+            font-weight: bold;
+        }
         .navbar-item {
             margin-bottom: 0.5rem;
             cursor: pointer;
@@ -43,7 +52,8 @@
             }
 
             &:hover {
-                text-decoration: underline;
+                text-decoration: none;
+                font-weight: bold;
             }
         }
     }
