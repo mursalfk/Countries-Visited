@@ -38,4 +38,46 @@
             }
         }
     }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        width: 100vw;
+        height: 50vh;
+        max-height: 50vh;
+        overflow-x: hidden;
+        .countryListUL {
+            list-style-type: none;
+            padding: 0;
+            max-height: 50vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            li {
+                margin: 2px 0px;
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                border-bottom: 1px solid var(--primary-color);
+                align-items: center;
+
+                .countryNameSidebar {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+                .removeButton {
+                    padding: 5px 10px;
+                    background-color: #dc3545;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #c82333;
+                    }
+                }
+            }
+        }
+    }
 }

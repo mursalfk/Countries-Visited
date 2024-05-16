@@ -331,6 +331,7 @@
   width: 25%;
   padding: 20px;
   background-color: #f3f3f3;
+  /* Mobile Responsive */
 }
 .sidebar .countryListUL {
   list-style-type: none;
@@ -361,6 +362,44 @@
 }
 .sidebar .countryListUL li .removeButton:hover {
   background-color: #c82333;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100vw;
+    height: 50vh;
+    max-height: 50vh;
+    overflow-x: hidden;
+  }
+  .sidebar .countryListUL {
+    list-style-type: none;
+    padding: 0;
+    max-height: 50vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .sidebar .countryListUL li {
+    margin: 2px 0px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px solid var(--primary-color);
+    align-items: center;
+  }
+  .sidebar .countryListUL li .countryNameSidebar {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .sidebar .countryListUL li .removeButton {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .sidebar .countryListUL li .removeButton:hover {
+    background-color: #c82333;
+  }
 }
 
 /* Login.scss */

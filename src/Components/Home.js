@@ -96,7 +96,7 @@ function Home() {
                 null
             )
             }
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }
