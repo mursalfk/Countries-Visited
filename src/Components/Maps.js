@@ -9,13 +9,19 @@ export default function MapChart({ selectedCountries, addCountryByClick }) {
     value: 1,
   }));
 
+  // Get screen width
+  const screenWidth = window.screen.width;
+
+  // Set the size of the map based on the screen width
+  const mapSize = screenWidth < 768 ? 300 : 1000;
+
   return (
     <div className="map-container">
       <WorldMap
         color="white"
         backgroundColor="#ffffff00"
         borderColor="black"
-        size={1000}
+        size={mapSize}
         data={data}
         onClickFunction={addCountryByClick}
       />

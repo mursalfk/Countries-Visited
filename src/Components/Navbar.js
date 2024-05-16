@@ -4,7 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 
 function Navbar({
   handleLogout,
-  userLoggedIn
+  userLoggedIn,
+  userData
 }) {
   const location = useLocation();
 
@@ -17,6 +18,14 @@ function Navbar({
           className="navbar-logo"
         />
         <div className="navbar-brand-name">Traveleeper</div>
+      </div>
+      <div className="navbar-user">
+        {userLoggedIn && (
+          <div className="navbar-user-info">
+            <div className="greetings">Welcome</div>
+            <div className="navbar-user-name">{userData.displayName}</div>
+          </div>
+        )}
       </div>
       <ul className="navbar-menu">
         {

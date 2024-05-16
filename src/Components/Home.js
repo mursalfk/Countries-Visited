@@ -1,7 +1,7 @@
 // Home.js
 import React, { useState, useEffect } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from '../firebase.config';
+import { auth, db } from '../firebase.config';
 import { useNavigate } from 'react-router-dom';
 import Navbar from "./Navbar";
 import MapChart from "./Maps";
@@ -10,10 +10,12 @@ import CustomAutocomplete from "./CustomAutocomplete";
 import "../styles/style.css";
 import Footer from "./Footer";
 import { signOut } from "firebase/auth";
+import { doc, getDoc } from 'firebase/firestore';
 
 function Home() {
     const [selectedCountries, setSelectedCountries] = useState([]);
     const [userLoggedIn, setUserLoggedIn] = useState(false);
+    const [userData, setUserData] = useState({});
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -32,8 +34,17 @@ function Home() {
                 const uid = user.uid;
                 console.log("uid", uid)
                 uid ? setUserLoggedIn(true) : setUserLoggedIn(false);
-                // Fetch USer's data from the database 'users' collection
-                // const docRef = doc(db, "users", uid);
+                const docRef = doc(db, 'users', uid);
+                getDoc(docRef).then((docSnap) => {
+                    if (docSnap.exists()) {
+                        console.log("Document data:", docSnap.data());
+                        setUserData(docSnap.data());
+                    } else {
+                        console.log("No such document!");
+                    }
+                }).catch((error) => {
+                    console.error("Error getting document:", error);
+                });
             } else {
                 console.log("No User Logged In")
             }
@@ -65,6 +76,7 @@ function Home() {
             <Navbar
                 handleLogout={handleLogout}
                 userLoggedIn={userLoggedIn}
+                userData={userData}
             />
             <MapChart
                 selectedCountries={selectedCountries}
