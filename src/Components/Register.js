@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import { db, auth } from '../firebase';
+import { db, auth } from '../firebase.config';
 import { collection, setDoc, doc } from "firebase/firestore";
 import NoUserNavbar from './NoUserNavbar';
 

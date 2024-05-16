@@ -3,7 +3,7 @@ import "../styles/style.css";
 import NoUserNavbar from './NoUserNavbar';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../firebase';
+import { auth } from '../firebase.config';
 
 function Login() {
     const [email, setEmail] = useState('');
