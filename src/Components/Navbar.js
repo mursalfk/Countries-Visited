@@ -5,18 +5,21 @@ import { Link, useLocation } from "react-router-dom";
 function Navbar({
   handleLogout,
   userLoggedIn,
-  userData
+  userData,
+  handleUpdate
 }) {
   const location = useLocation();
 
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img
-          src={ImagesImported.logo}
-          alt="logo"
-          className="navbar-logo"
-        />
+        <Link to="/">
+          <img
+            src={ImagesImported.logo}
+            alt="logo"
+            className="navbar-logo"
+          />
+        </Link>
         <div className="navbar-brand-name">Traveleeper</div>
       </div>
       <div className="navbar-user">
@@ -31,10 +34,14 @@ function Navbar({
         {
           userLoggedIn ? (
             <>
-              <li className={`navbar-item ${location.pathname === "/home" ? "active" : ""}`}>
-                <Link to="/home">Home</Link>
+              <li className={`navbar-item ${location.pathname === "/" ? "active" : ""}`}>
+                <Link to="/">Home</Link>
               </li>
               <li className="navbar-item" onClick={handleLogout}>Logout</li>
+              <li className="navbar-item" onClick={handleUpdate}>Update Record</li>
+              <li className="navbar-item disabled"><a href="#">Profile</a></li>
+              <li className="navbar-item disabled"><a href="#">Contact</a></li>
+              <li className="navbar-item"><a href="https://forms.gle/RtSt3Ae1yjDeCPhv6" target="_blank" rel="noreferrer">Feedback</a></li>
             </>
           ) : (
             <>

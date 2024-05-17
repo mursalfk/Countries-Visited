@@ -69,7 +69,7 @@ function Register() {
                         </div>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <input type="text" id="text" name="text" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>

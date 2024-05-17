@@ -16,11 +16,13 @@ function NoUserNavbar({
         <nav className={`noUserNavbar ${menuOpen ? "show-menu" : ""}`}>
             <div className="navbar-header">
                 <div className="navbar-brand">
-                    <img
-                        src={ImagesImported.logo}
-                        alt="logo"
-                        className="navbar-logo"
-                    />
+                    <Link to="/">
+                        <img
+                            src={ImagesImported.logo}
+                            alt="logo"
+                            className="navbar-logo"
+                        />
+                    </Link>
                     <div className="navbar-brand-name">Traveleeper</div>
                 </div>
                 <button className="navbar-toggle" onClick={toggleMenu}>
@@ -28,8 +30,8 @@ function NoUserNavbar({
                 </button>
             </div>
             <ul className="navbar-menu">
-                <li className={`navbar-item ${location.pathname === "/home" ? "active" : ""}`}>
-                    <Link to="/home">Home</Link>
+                <li className={`navbar-item ${location.pathname === "/" ? "active" : ""}`}>
+                    <Link to="/">Home</Link>
                 </li>
                 <li className={`navbar-item ${location.pathname === "/login" ? "active" : ""}`}>
                     <Link to="/login">Login</Link>
